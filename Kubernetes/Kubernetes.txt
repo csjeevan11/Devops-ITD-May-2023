@@ -280,6 +280,7 @@ namespaces (ns)
     - If we won't specify a namespace, objects will be created in the default namespace of k8s.
     - namespaces are cluster level.
     - Namespaces are only hidden from each other but not fully isolated because one service in a namespace can talk to another service in another namespace using the full name (service/<service_name>) followed by the namespace name
+	- If we delete the namespace then it will delete all the objects inside the namespace.
 
 usage: we can apply environment-based logical separation on cluster. 
         
