@@ -313,6 +313,9 @@ usage: we can apply environment-based logical separation on cluster.
 
     To create a namespace 
         kubectl create ns <namespace_name>
+
+    To delete a namespace 
+        kubectl delete ns <namespace_name>
         
     To create an object in a namespace 
         1. In metadata:
