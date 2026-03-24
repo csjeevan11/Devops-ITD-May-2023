@@ -159,6 +159,12 @@ To list objects
 To delete objects 
     kubectl delete <object_type>
 
+To check the API group/version used:
+	kubectl explain pod
+	kubectl explain deployment
+	kubectl explain daemonset
+	kubectl explain replicaset
+
 Deployment controller / Deployment / Deployment k8s
 
 - Deployment is used to create replicas of similar kind of pods and It makes sure that at a given point of time that number of replicas of pods is always running by using ReplicaSet controller.
