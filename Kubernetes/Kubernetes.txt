@@ -56,6 +56,15 @@ Worker node components
             - pod should contain at least one container and can have n number of containers.
             - If the pod contains more than one container all the containers share the same memory assigned to that pod.
 
+ Architecture Flow :-
+	1- User runs command using kubectl
+	2- Request goes to API Server
+	3- API Server stores data in etcd
+	4- Scheduler assigns pod to a node
+	5- Kubelet on that node creates the pod
+	6- Container Runtime runs containers
+	7- Kube-proxy enables networking
+
 Kubeadm setup
 STEP1:  Create a master 
 
