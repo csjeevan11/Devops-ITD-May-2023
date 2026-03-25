@@ -13,3 +13,23 @@ spec:
         nodePort: 30006 
         
         
+Note:- Here provide the same lables which we have in the deployment.yml file.
+spec:
+    type: NodePort     
+    selector:
+        app: ip-app
+
+
+Flow:-
+Service is created
+    No Pods yet → nothing happens
+Deployment creates Pods
+    Service automatically detects them ✅
+
+👉 Service is dynamic, not static
+
+It doesn’t store Pod IPs permanently
+It updates automatically when:
+        Pods are created
+        Pods are deleted
+
