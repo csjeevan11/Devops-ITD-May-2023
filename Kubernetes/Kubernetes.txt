@@ -297,6 +297,7 @@ usage: we can apply environment-based logical separation on cluster.
             
     2. kube-system 
        - This namespace is always used for objects created by the k8s system.
+	   - stores all internal Kubernetes components required to run and manage the cluster.
        
     3. kube-public 
        - The objects in this namespace are available or accessible to all.
@@ -326,6 +327,14 @@ usage: we can apply environment-based logical separation on cluster.
     To create an object in a namespace 
         1. In metadata:
             namespace: <namespace_name>
+		Add namespace under metadata, create the namespace first, and make sure both Deployment and Service use the same namespace.
+
+		Example:-
+			apiVersion: apps/v1
+			kind: Deployment
+			metadata:
+			  name: ip-app-deployment
+			  namespace: my-ns
 
         2. While apply     
             kubectl apply -f <spec_file>.yml -n <namespace_name>
