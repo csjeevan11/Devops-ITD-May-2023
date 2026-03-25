@@ -1,3 +1,6 @@
+type: recreate :-
+=================
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,3 +23,39 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+
+Note:-
+Recreate deletes all existing Pods at once and then creates new ones using the updated image, causing temporary downtime.
+
+type: RollingUpdate:-
+======================
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ip-app-deployment
+spec:
+  replicas: 4
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  selector:
+    matchLabels:
+      app: ip-app
+
+  template:
+    metadata:
+      labels:
+        app: ip-app
+
+    spec:
+      containers:
+        - name: ipapp
+          image: harshajain/ip_app:v1
+          ports:
+            - containerPort: 8080
