@@ -519,7 +519,10 @@ RBAC  (Role Based Access Control)
 							name: <service_account_name>
 
 			STEP 2: Create a token for above service account 
-					apiVersion: v1
+
+					1- kubectl create token my-sa -n my-ns
+
+				2-	apiVersion: v1
 					kind: Secret 
 					metadata: 
 						name: <secret_name>
