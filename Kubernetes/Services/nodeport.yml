@@ -33,3 +33,8 @@ It updates automatically when:
         Pods are created
         Pods are deleted
 
+Service Type → NodePort (external access)
+Selector → connects Service to Pods
+port → internal Service port
+targetPort → container port
+nodePort → external access port
